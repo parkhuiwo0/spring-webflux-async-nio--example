@@ -1,4 +1,4 @@
-package com.github.parkhuiwo0.learningreactvie.echo;
+package com.github.parkhuiwo0.learningreactvie.echo.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -38,5 +38,18 @@ public class EchoClient {
         } finally {
             group.shutdownGracefully().sync(); // 스레드 풀을 종료하고 모든 리소스를 해제함.
         }
+    }
+
+    public static void main(String[] args) throws Exception {
+        if (args.length != 2) {
+            System.err.println(
+                    "Usage: " + EchoClient.class.getSimpleName() +
+                            "<host> <port>");
+            return;
+        }
+
+        String host = args[0];
+        int port = Integer.parseInt(args[1]);
+        new EchoClient(host, port).start();
     }
 }

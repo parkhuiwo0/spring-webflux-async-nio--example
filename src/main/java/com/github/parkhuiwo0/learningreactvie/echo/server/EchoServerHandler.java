@@ -1,4 +1,4 @@
-package com.github.parkhuiwo0.learningreactvie.echo;
+package com.github.parkhuiwo0.learningreactvie.echo.server;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
